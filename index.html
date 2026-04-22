@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Okoumé Littéraire | La Plume Gabonaise</title>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="scrollProgress"></div>
+
+    <header class="hero">
+        <div class="logo-container">
+            <img src="image livre/logo okoumé.png" alt="Logo L'Okoumé Littéraire" class="site-logo">
+        </div>
+        
+        <h1>L'Okoumé <span>Littéraire</span></h1>
+        
+        <p class="intro">
+            "Bienvenue sur L'Okoumé Littéraire. Mon ambition est de lever le voile sur la richesse infinie de la littérature gabonaise. Ici, chaque livre est une porte ouverte sur nos récits, nos traditions et nos réalités. Parcourez ces œuvres passionnantes, imprégnez-vous de leurs histoires et laissez-vous captiver par la plume de nos auteurs. Mon but ? Vous aider à trouver votre prochain coup de cœur et vous donner l'envie de vous le procurer pour faire vivre notre patrimoine écrit."<br>
+            <span>Découvrez votre prochain coup de cœur littéraire !</span>
+        </p>
+    </header>
+
+    <section class="controls">
+        <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Chercher un roman ou un auteur...">
+            
+            <button id="randomBtn" title="Livre au hasard">
+                <i class="fa-solid fa-star"></i>
+            </button>
+        </div>
+
+        <div class="filter-group">
+            <button class="filter-btn active" onclick="filterCategory('tous')">Tous</button>
+            <button class="filter-btn" onclick="filterCategory('Amour')">Amour</button>
+            <button class="filter-btn" onclick="filterCategory('Mysticisme')">Mysticisme</button>
+            <button class="filter-btn" onclick="filterCategory('Société')">Société</button>
+            <button class="filter-btn" onclick="filterCategory('Drame')">Drame</button>
+            <button class="filter-btn" onclick="filterCategory('Tradition')">Tradition</button>
+            <button class="filter-btn" onclick="filterCategory('Aventure')">Aventure</button>
+            <button class="filter-btn" onclick="filterCategory('Poésie')">Poésie</button>
+            <button class="filter-btn" onclick="filterCategory('Science-fiction')">Science-fiction</button>
+            <button class="filter-btn" onclick="filterCategory('Bande déssinée')">Bande déssinée</button>
+        </div>
+    </section>
+
+    <main class="books-grid" id="booksGrid"></main>
+
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img">
+                    <img id="modalImg" src="" alt="Couverture du livre">
+                </div>
+                <div class="modal-infos">
+                    <h2 id="modalTitle">Titre du Livre</h2>
+                    <p class="modal-author" id="modalAuthor">Par Nom de l'auteur</p>
+                    
+                    <div class="modal-meta">
+                        <span id="modalCat" class="tag">Catégorie</span>
+                        <span class="date-pub">Parution : <strong id="modalDate">2024</strong></span>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="description-section">
+                        <h4>À propos du livre :</h4>
+                        <p id="modalDesc" class="full-description"></p>
+                    </div>
+
+                    <div class="share-section">
+                        <p>Partager cette œuvre :</p>
+                        <div class="share-buttons">
+                            <a id="shareWA" href="#" target="_blank" class="share-btn whatsapp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                            <a id="shareFB" href="#" target="_blank" class="share-btn facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="modalStore" class="buy-info-modal"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 L'Okoumé Littéraire — Camille Fatou Simangoye</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
